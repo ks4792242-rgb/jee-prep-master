@@ -1,0 +1,1637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JEE Prep Master 2027</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0a0f;
+  --bg2: #111118;
+  --bg3: #1a1a24;
+  --bg4: #222230;
+  --card: rgba(255,255,255,0.04);
+  --card-border: rgba(255,255,255,0.08);
+  --card-hover: rgba(255,255,255,0.07);
+  --text: #f0f0f8;
+  --text2: #a0a0b8;
+  --text3: #606078;
+  --ph: #4f8ef7;
+  --ph-bg: rgba(79,142,247,0.12);
+  --ph-border: rgba(79,142,247,0.25);
+  --ch: #34c98a;
+  --ch-bg: rgba(52,201,138,0.12);
+  --ch-border: rgba(52,201,138,0.25);
+  --ma: #f97b4f;
+  --ma-bg: rgba(249,123,79,0.12);
+  --ma-border: rgba(249,123,79,0.25);
+  --re: #a78bfa;
+  --re-bg: rgba(167,139,250,0.12);
+  --re-border: rgba(167,139,250,0.25);
+  --mock: #f59e0b;
+  --mock-bg: rgba(245,158,11,0.12);
+  --gold: #f59e0b;
+  --radius: 16px;
+  --radius-sm: 10px;
+  --shadow: 0 8px 32px rgba(0,0,0,0.4);
+  --transition: 0.2s cubic-bezier(0.4,0,0.2,1);
+}
+.light {
+  --bg: #f4f4f8;
+  --bg2: #ffffff;
+  --bg3: #ececf4;
+  --bg4: #e0e0ec;
+  --card: rgba(255,255,255,0.9);
+  --card-border: rgba(0,0,0,0.08);
+  --card-hover: rgba(255,255,255,1);
+  --text: #0a0a1a;
+  --text2: #44445a;
+  --text3: #888899;
+  --ph: #2563eb;
+  --ph-bg: rgba(37,99,235,0.08);
+  --ph-border: rgba(37,99,235,0.2);
+  --ch: #059669;
+  --ch-bg: rgba(5,150,105,0.08);
+  --ch-border: rgba(5,150,105,0.2);
+  --ma: #ea580c;
+  --ma-bg: rgba(234,88,12,0.08);
+  --ma-border: rgba(234,88,12,0.2);
+  --re: #7c3aed;
+  --re-bg: rgba(124,58,237,0.08);
+  --re-border: rgba(124,58,237,0.2);
+  --mock: #d97706;
+  --mock-bg: rgba(217,119,6,0.08);
+  --gold: #d97706;
+  --shadow: 0 4px 24px rgba(0,0,0,0.1);
+}
+* { margin:0; padding:0; box-sizing:border-box; }
+body {
+  font-family: 'Inter', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  transition: background var(--transition), color var(--transition);
+}
+h1,h2,h3,h4 { font-family: 'Space Grotesk', sans-serif; }
+
+/* SIDEBAR */
+.app { display:flex; min-height:100vh; }
+.sidebar {
+  width: 260px;
+  background: var(--bg2);
+  border-right: 1px solid var(--card-border);
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  height: 100vh;
+  z-index: 100;
+  transition: background var(--transition);
+}
+.sidebar-logo {
+  padding: 28px 24px 20px;
+  border-bottom: 1px solid var(--card-border);
+}
+.logo-title {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg, var(--ph), var(--re));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.logo-sub { font-size: 11px; color: var(--text3); margin-top: 2px; letter-spacing: 0.05em; text-transform: uppercase; }
+.nav { flex: 1; padding: 16px 12px; overflow-y: auto; }
+.nav-section { margin-bottom: 24px; }
+.nav-section-title { font-size: 10px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 12px; margin-bottom: 6px; }
+.nav-item {
+  display: flex; align-items: center; gap: 12px;
+  padding: 11px 14px; border-radius: var(--radius-sm);
+  cursor: pointer; font-size: 14px; font-weight: 500;
+  color: var(--text2); transition: all var(--transition);
+  margin-bottom: 2px;
+}
+.nav-item:hover { background: var(--card); color: var(--text); }
+.nav-item.active { background: var(--ph-bg); color: var(--ph); border: 1px solid var(--ph-border); }
+.nav-item .icon { width: 20px; text-align: center; font-size: 16px; }
+.sidebar-bottom { padding: 16px 12px; border-top: 1px solid var(--card-border); }
+.theme-toggle {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 14px; background: var(--card); border: 1px solid var(--card-border);
+  border-radius: var(--radius-sm); cursor: pointer;
+}
+.toggle-switch {
+  width: 36px; height: 20px; background: var(--bg4); border-radius: 10px;
+  position: relative; transition: background var(--transition);
+}
+.toggle-switch.on { background: var(--ph); }
+.toggle-knob {
+  width: 14px; height: 14px; background: #fff; border-radius: 50%;
+  position: absolute; top: 3px; left: 3px; transition: left var(--transition);
+}
+.toggle-switch.on .toggle-knob { left: 19px; }
+
+/* MAIN */
+.main { margin-left: 260px; flex: 1; padding: 32px; min-height: 100vh; }
+
+/* PAGE */
+.page { display: none; }
+.page.active { display: block; }
+
+/* HEADER */
+.page-header { margin-bottom: 28px; }
+.page-title { font-size: 28px; font-weight: 700; color: var(--text); }
+.page-sub { font-size: 14px; color: var(--text2); margin-top: 4px; }
+
+/* CARDS */
+.card {
+  background: var(--card);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius);
+  padding: 20px;
+  transition: all var(--transition);
+}
+.card:hover { background: var(--card-hover); border-color: rgba(255,255,255,0.12); }
+.light .card:hover { border-color: rgba(0,0,0,0.12); }
+
+/* GRID */
+.grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+
+/* STAT CARD */
+.stat-card { text-align: center; padding: 24px 16px; }
+.stat-num { font-size: 36px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
+.stat-label { font-size: 12px; color: var(--text2); margin-top: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+.stat-sub { font-size: 11px; color: var(--text3); margin-top: 2px; }
+
+/* PROGRESS BAR */
+.progress-wrap { margin: 8px 0; }
+.progress-label { display:flex; justify-content:space-between; font-size:12px; color:var(--text2); margin-bottom:6px; }
+.progress-bar { height: 6px; background: var(--bg4); border-radius: 3px; overflow: hidden; }
+.progress-fill { height: 100%; border-radius: 3px; transition: width 0.8s cubic-bezier(0.4,0,0.2,1); }
+
+/* BADGE */
+.badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  padding: 3px 10px; border-radius: 20px; font-size: 11px; font-weight: 600;
+  letter-spacing: 0.03em;
+}
+.badge-ph { background: var(--ph-bg); color: var(--ph); border: 1px solid var(--ph-border); }
+.badge-ch { background: var(--ch-bg); color: var(--ch); border: 1px solid var(--ch-border); }
+.badge-ma { background: var(--ma-bg); color: var(--ma); border: 1px solid var(--ma-border); }
+.badge-re { background: var(--re-bg); color: var(--re); border: 1px solid var(--re-border); }
+.badge-mock { background: var(--mock-bg); color: var(--mock); border: 1px solid rgba(245,158,11,0.25); }
+.badge-rev { background: rgba(100,200,255,0.1); color: #60c8ff; border: 1px solid rgba(100,200,255,0.2); }
+
+/* TODAY CARD */
+.today-card {
+  background: linear-gradient(135deg, rgba(79,142,247,0.15), rgba(167,139,250,0.15));
+  border: 1px solid rgba(79,142,247,0.3);
+  border-radius: var(--radius);
+  padding: 24px;
+  margin-bottom: 24px;
+  position: relative;
+  overflow: hidden;
+}
+.today-card::before {
+  content: '';
+  position: absolute; top: -40px; right: -40px;
+  width: 160px; height: 160px;
+  background: radial-gradient(circle, rgba(167,139,250,0.2), transparent 70%);
+  border-radius: 50%;
+}
+.today-label { font-size: 11px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--text3); margin-bottom: 8px; }
+.today-chapter { font-size: 22px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.today-meta { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; }
+
+/* TIMETABLE */
+.week-tabs { display: flex; gap: 6px; margin-bottom: 20px; flex-wrap: wrap; }
+.week-tab {
+  padding: 7px 16px; border-radius: 8px; cursor: pointer;
+  font-size: 13px; font-weight: 500; background: var(--card);
+  border: 1px solid var(--card-border); color: var(--text2);
+  transition: all var(--transition);
+}
+.week-tab.active { background: var(--ph-bg); color: var(--ph); border-color: var(--ph-border); }
+.timetable-grid { display: grid; gap: 10px; }
+.day-row {
+  display: grid; grid-template-columns: 100px 1fr 1fr 1fr auto;
+  gap: 12px; align-items: center;
+  padding: 14px 16px; background: var(--card);
+  border: 1px solid var(--card-border); border-radius: var(--radius-sm);
+  transition: all var(--transition);
+}
+.day-row:hover { background: var(--card-hover); }
+.day-row.today-row { border-color: var(--ph-border); background: var(--ph-bg); }
+.day-row.completed { opacity: 0.5; }
+.day-date { font-size: 12px; font-weight: 600; color: var(--text); }
+.day-dayname { font-size: 10px; color: var(--text3); margin-top: 2px; }
+.day-subject { font-size: 12px; }
+.day-chapter { font-size: 13px; font-weight: 500; color: var(--text); }
+.day-type { font-size: 11px; }
+.day-check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid var(--card-border); cursor: pointer; transition: all var(--transition); flex-shrink: 0; display: flex; align-items: center; justify-content: center; }
+.day-check.done { background: var(--ch); border-color: var(--ch); }
+.day-check.done::after { content: '✓'; color: white; font-size: 12px; font-weight: 700; }
+
+/* CHAPTER TRACKER */
+.subject-section { margin-bottom: 28px; }
+.subject-header {
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--card-border);
+}
+.subject-title { font-size: 18px; font-weight: 700; }
+.chapters-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 10px; }
+.chapter-card {
+  display: flex; align-items: center; gap: 12px;
+  padding: 12px 14px; background: var(--card);
+  border: 1px solid var(--card-border); border-radius: var(--radius-sm);
+  cursor: pointer; transition: all var(--transition);
+}
+.chapter-card:hover { background: var(--card-hover); }
+.chapter-card.done { border-color: var(--ch-border); }
+.chapter-num { font-size: 11px; color: var(--text3); font-weight: 600; min-width: 24px; }
+.chapter-name { font-size: 13px; font-weight: 500; flex: 1; }
+.chapter-status { font-size: 10px; }
+.status-select {
+  background: var(--bg3); border: 1px solid var(--card-border);
+  color: var(--text2); font-size: 11px; padding: 3px 6px;
+  border-radius: 6px; cursor: pointer; outline: none;
+}
+
+/* THEORY */
+.theory-chapter {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: var(--radius); margin-bottom: 10px; overflow: hidden;
+}
+.theory-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; cursor: pointer; transition: background var(--transition);
+}
+.theory-header:hover { background: var(--card-hover); }
+.theory-title { font-size: 15px; font-weight: 600; }
+.theory-chevron { transition: transform var(--transition); font-size: 18px; color: var(--text3); }
+.theory-body { padding: 0 20px; max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.2s; }
+.theory-body.open { max-height: 600px; padding: 0 20px 20px; }
+.theory-section { margin-bottom: 16px; }
+.theory-section-title { font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text3); margin-bottom: 8px; font-weight: 600; }
+.formula-box {
+  background: var(--bg3); border: 1px solid var(--card-border);
+  border-radius: 8px; padding: 10px 14px;
+  font-size: 13px; line-height: 1.8; color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+}
+.tip-item { display: flex; gap: 8px; font-size: 13px; color: var(--text2); margin-bottom: 6px; line-height: 1.5; }
+.tip-item::before { content: '→'; color: var(--ph); flex-shrink: 0; }
+
+/* MOCK TEST */
+.mock-options { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 28px; }
+.mock-card {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: var(--radius); padding: 24px; text-align: center;
+  cursor: pointer; transition: all var(--transition);
+}
+.mock-card:hover { border-color: var(--ph-border); background: var(--ph-bg); transform: translateY(-2px); }
+.mock-icon { font-size: 32px; margin-bottom: 12px; }
+.mock-title { font-size: 15px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
+.mock-desc { font-size: 12px; color: var(--text2); }
+
+/* QUIZ */
+.quiz-wrap { max-width: 700px; }
+.quiz-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; }
+.quiz-progress-text { font-size: 14px; color: var(--text2); }
+.question-card {
+  background: var(--card); border: 1px solid var(--card-border);
+  border-radius: var(--radius); padding: 28px; margin-bottom: 20px;
+}
+.question-num { font-size: 11px; color: var(--text3); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 12px; }
+.question-text { font-size: 16px; font-weight: 500; line-height: 1.6; color: var(--text); margin-bottom: 24px; }
+.options { display: grid; gap: 10px; }
+.option {
+  display: flex; align-items: center; gap: 14px;
+  padding: 14px 18px; background: var(--bg3);
+  border: 1px solid var(--card-border); border-radius: var(--radius-sm);
+  cursor: pointer; transition: all var(--transition); font-size: 14px;
+}
+.option:hover { border-color: var(--ph-border); background: var(--ph-bg); }
+.option.selected { border-color: var(--ph); background: var(--ph-bg); }
+.option.correct { border-color: var(--ch); background: var(--ch-bg); }
+.option.wrong { border-color: #ef4444; background: rgba(239,68,68,0.1); }
+.option-letter {
+  width: 28px; height: 28px; border-radius: 50%;
+  background: var(--bg4); display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; flex-shrink: 0;
+}
+.quiz-actions { display: flex; gap: 12px; }
+.btn {
+  padding: 11px 24px; border-radius: var(--radius-sm);
+  font-size: 14px; font-weight: 600; cursor: pointer;
+  border: none; transition: all var(--transition); font-family: 'Inter', sans-serif;
+}
+.btn-primary { background: var(--ph); color: white; }
+.btn-primary:hover { opacity: 0.9; transform: translateY(-1px); }
+.btn-secondary {
+  background: var(--card); color: var(--text2);
+  border: 1px solid var(--card-border);
+}
+.btn-secondary:hover { background: var(--card-hover); }
+.btn-danger { background: rgba(239,68,68,0.15); color: #ef4444; border: 1px solid rgba(239,68,68,0.3); }
+
+/* RESULT */
+.result-card { text-align: center; padding: 40px; }
+.result-score { font-size: 72px; font-weight: 700; font-family: 'Space Grotesk', sans-serif; }
+.result-label { font-size: 16px; color: var(--text2); margin-top: 8px; }
+.result-breakdown { display: flex; justify-content: center; gap: 32px; margin: 28px 0; }
+.result-item { text-align: center; }
+.result-item-num { font-size: 28px; font-weight: 700; }
+.result-item-label { font-size: 12px; color: var(--text2); }
+
+/* ANALYTICS */
+.analytics-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px; }
+.chart-wrap { height: 200px; position: relative; display: flex; align-items: flex-end; gap: 6px; padding-top: 10px; }
+.chart-bar-wrap { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 4px; height: 100%; justify-content: flex-end; }
+.chart-bar { width: 100%; border-radius: 4px 4px 0 0; transition: height 0.6s cubic-bezier(0.4,0,0.2,1); }
+.chart-label { font-size: 10px; color: var(--text3); }
+
+/* SETTINGS */
+.settings-section { margin-bottom: 28px; }
+.settings-title { font-size: 16px; font-weight: 600; margin-bottom: 14px; padding-bottom: 10px; border-bottom: 1px solid var(--card-border); }
+.setting-row { display: flex; align-items: center; justify-content: space-between; padding: 14px 0; border-bottom: 1px solid var(--card-border); }
+.setting-label { font-size: 14px; font-weight: 500; }
+.setting-sub { font-size: 12px; color: var(--text2); margin-top: 2px; }
+.setting-input {
+  background: var(--bg3); border: 1px solid var(--card-border);
+  color: var(--text); font-size: 13px; padding: 7px 12px;
+  border-radius: 8px; outline: none; width: 140px;
+  font-family: 'Inter', sans-serif;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--bg4); border-radius: 3px; }
+
+/* MOBILE */
+.hamburger { display: none; position: fixed; top: 16px; left: 16px; z-index: 200; background: var(--bg2); border: 1px solid var(--card-border); border-radius: 10px; padding: 8px 10px; cursor: pointer; font-size: 18px; }
+.overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5); z-index: 99; }
+
+/* STREAK */
+.streak-fire { font-size: 28px; }
+.streak-dots { display: flex; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+.streak-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--bg4); }
+.streak-dot.done { background: var(--gold); }
+
+@media (max-width: 1100px) { .grid-4 { grid-template-columns: repeat(2,1fr); } .mock-options { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 860px) {
+  .hamburger { display: flex; align-items: center; }
+  .sidebar { transform: translateX(-100%); transition: transform 0.3s; }
+  .sidebar.open { transform: translateX(0); }
+  .overlay.open { display: block; }
+  .main { margin-left: 0; padding: 20px 16px; padding-top: 64px; }
+  .grid-4 { grid-template-columns: repeat(2,1fr); }
+  .grid-3, .mock-options { grid-template-columns: 1fr; }
+  .day-row { grid-template-columns: 1fr; }
+  .analytics-grid { grid-template-columns: 1fr; }
+}
+@media (max-width: 520px) { .grid-4, .grid-2 { grid-template-columns: 1fr; } }
+
+.empty-state { text-align: center; padding: 60px 20px; color: var(--text3); }
+.empty-state .empty-icon { font-size: 48px; margin-bottom: 12px; }
+.section-divider { height: 1px; background: var(--card-border); margin: 24px 0; }
+.tag { display: inline-block; padding: 2px 8px; border-radius: 6px; font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+.tag-theory { background: var(--ph-bg); color: var(--ph); }
+.tag-practice { background: var(--ch-bg); color: var(--ch); }
+.tag-revision { background: var(--re-bg); color: var(--re); }
+.tag-mock { background: var(--mock-bg); color: var(--mock); }
+.tag-test { background: rgba(239,68,68,0.12); color: #ef4444; }
+.tag-holiday { background: var(--bg4); color: var(--text3); }
+</style>
+</head>
+<body>
+
+<button class="hamburger" onclick="toggleSidebar()">☰</button>
+<div class="overlay" id="overlay" onclick="toggleSidebar()"></div>
+
+<div class="app">
+<!-- SIDEBAR -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-logo">
+    <div class="logo-title">JEE Prep Master</div>
+    <div class="logo-sub">2027 · All India Rank</div>
+  </div>
+  <nav class="nav">
+    <div class="nav-section">
+      <div class="nav-section-title">Overview</div>
+      <div class="nav-item active" onclick="showPage('dashboard',this)"><span class="icon">🏠</span> Dashboard</div>
+      <div class="nav-item" onclick="showPage('timetable',this)"><span class="icon">📅</span> Timetable</div>
+      <div class="nav-item" onclick="showPage('tracker',this)"><span class="icon">✅</span> Chapter Tracker</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Study</div>
+      <div class="nav-item" onclick="showPage('theory',this)"><span class="icon">📖</span> Theory Notes</div>
+      <div class="nav-item" onclick="showPage('mock',this)"><span class="icon">🧪</span> Mock Tests</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-section-title">Insights</div>
+      <div class="nav-item" onclick="showPage('analytics',this)"><span class="icon">📊</span> Analytics</div>
+      <div class="nav-item" onclick="showPage('settings',this)"><span class="icon">⚙️</span> Settings</div>
+    </div>
+  </nav>
+  <div class="sidebar-bottom">
+    <div class="theme-toggle" onclick="toggleTheme()">
+      <span style="font-size:13px;font-weight:500;color:var(--text2)" id="theme-label">🌙 Dark Mode</span>
+      <div class="toggle-switch" id="themeSwitch"><div class="toggle-knob"></div></div>
+    </div>
+  </div>
+</aside>
+
+<!-- MAIN -->
+<main class="main">
+
+<!-- DASHBOARD -->
+<div class="page active" id="page-dashboard">
+  <div class="page-header">
+    <h1 class="page-title">Good morning! 🚀</h1>
+    <p class="page-sub" id="dashboard-date">Loading...</p>
+  </div>
+
+  <!-- Today's Focus -->
+  <div class="today-card" id="todayCard">
+    <div class="today-label">📌 Today's Focus</div>
+    <div class="today-chapter" id="todayChapter">Loading...</div>
+    <div class="today-meta" id="todayMeta"></div>
+  </div>
+
+  <!-- Stats -->
+  <div class="grid-4" style="margin-bottom:20px">
+    <div class="card stat-card">
+      <div class="stat-num" id="daysLeft" style="color:var(--ph)">—</div>
+      <div class="stat-label">Days to JEE</div>
+      <div class="stat-sub">Session 1 · Jan 2027</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-num" id="chapDone" style="color:var(--ch)">0</div>
+      <div class="stat-label">Chapters Done</div>
+      <div class="stat-sub">out of 91</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-num" id="streakCount" style="color:var(--gold)">0🔥</div>
+      <div class="stat-label">Day Streak</div>
+      <div class="stat-sub">Keep going!</div>
+    </div>
+    <div class="card stat-card">
+      <div class="stat-num" id="mocksDone" style="color:var(--re)">0</div>
+      <div class="stat-label">Mocks Given</div>
+      <div class="stat-sub">Target: 30+</div>
+    </div>
+  </div>
+
+  <!-- Progress -->
+  <div class="grid-3" style="margin-bottom:20px">
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+        <span style="font-weight:600;font-size:15px">⚡ Physics</span>
+        <span class="badge badge-ph" id="ph-pct">0%</span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="ph-bar" style="width:0%;background:var(--ph)"></div></div>
+      </div>
+      <div style="font-size:12px;color:var(--text3);margin-top:8px" id="ph-count">0 / 30 chapters</div>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+        <span style="font-weight:600;font-size:15px">🧪 Chemistry</span>
+        <span class="badge badge-ch" id="ch-pct">0%</span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="ch-bar" style="width:0%;background:var(--ch)"></div></div>
+      </div>
+      <div style="font-size:12px;color:var(--text3);margin-top:8px" id="ch-count">0 / 30 chapters</div>
+    </div>
+    <div class="card">
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:14px">
+        <span style="font-weight:600;font-size:15px">📐 Mathematics</span>
+        <span class="badge badge-ma" id="ma-pct">0%</span>
+      </div>
+      <div class="progress-wrap">
+        <div class="progress-bar"><div class="progress-fill" id="ma-bar" style="width:0%;background:var(--ma)"></div></div>
+      </div>
+      <div style="font-size:12px;color:var(--text3);margin-top:8px" id="ma-count">0 / 31 chapters</div>
+    </div>
+  </div>
+
+  <!-- Streak this week -->
+  <div class="card">
+    <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px">
+      <div class="streak-fire">🔥</div>
+      <div>
+        <div style="font-weight:600;font-size:15px">This Week's Streak</div>
+        <div style="font-size:12px;color:var(--text2)">Mark days complete in your timetable</div>
+      </div>
+    </div>
+    <div class="streak-dots" id="streakDots"></div>
+    <div style="display:flex;gap:16px;margin-top:8px;font-size:11px;color:var(--text3)">
+      <span>🟡 Completed</span><span>⚫ Pending</span>
+    </div>
+  </div>
+</div>
+
+<!-- TIMETABLE -->
+<div class="page" id="page-timetable">
+  <div class="page-header">
+    <h1 class="page-title">📅 Full Timetable</h1>
+    <p class="page-sub">June 19, 2026 → January 20, 2027 · Complete day-by-day plan</p>
+  </div>
+  <div class="week-tabs" id="weekTabs"></div>
+  <div class="timetable-grid" id="timetableGrid"></div>
+</div>
+
+<!-- CHAPTER TRACKER -->
+<div class="page" id="page-tracker">
+  <div class="page-header">
+    <h1 class="page-title">✅ Chapter Tracker</h1>
+    <p class="page-sub">Track your progress across all 91 chapters</p>
+  </div>
+  <div id="trackerContent"></div>
+</div>
+
+<!-- THEORY -->
+<div class="page" id="page-theory">
+  <div class="page-header">
+    <h1 class="page-title">📖 Theory Notes</h1>
+    <p class="page-sub">Key concepts, formulas & JEE tips for every chapter</p>
+  </div>
+  <div style="display:flex;gap:10px;margin-bottom:20px;flex-wrap:wrap" id="theoryTabs">
+    <button class="week-tab active" onclick="filterTheory('all',this)">All</button>
+    <button class="week-tab" onclick="filterTheory('Physics',this)">⚡ Physics</button>
+    <button class="week-tab" onclick="filterTheory('Chemistry',this)">🧪 Chemistry</button>
+    <button class="week-tab" onclick="filterTheory('Mathematics',this)">📐 Mathematics</button>
+  </div>
+  <div id="theoryContent"></div>
+</div>
+
+<!-- MOCK TEST -->
+<div class="page" id="page-mock">
+  <div class="page-header">
+    <h1 class="page-title">🧪 Mock Tests</h1>
+    <p class="page-sub">Chapter tests, full mocks & PYQ practice</p>
+  </div>
+  <div id="mockHome">
+    <div class="mock-options">
+      <div class="mock-card" onclick="startQuiz('chapter')">
+        <div class="mock-icon">📝</div>
+        <div class="mock-title">Chapter Test</div>
+        <div class="mock-desc">10 questions per chapter<br>~15 minutes</div>
+      </div>
+      <div class="mock-card" onclick="startQuiz('full')">
+        <div class="mock-icon">🏆</div>
+        <div class="mock-title">Full Mock Test</div>
+        <div class="mock-desc">75 questions · 3 hours<br>JEE pattern</div>
+      </div>
+      <div class="mock-card" onclick="startQuiz('pyq')">
+        <div class="mock-icon">📚</div>
+        <div class="mock-title">PYQ Practice</div>
+        <div class="mock-desc">Previous year questions<br>2019–2026</div>
+      </div>
+    </div>
+    <div class="card">
+      <div style="font-weight:600;font-size:15px;margin-bottom:16px">📊 Test History</div>
+      <div id="testHistory">
+        <div class="empty-state"><div class="empty-icon">📋</div><div>No tests taken yet. Start your first mock!</div></div>
+      </div>
+    </div>
+  </div>
+  <div id="quizSection" style="display:none">
+    <div class="quiz-wrap">
+      <div class="quiz-header">
+        <button class="btn btn-secondary" onclick="exitQuiz()">← Exit</button>
+        <div class="quiz-progress-text" id="quizProgressText">Question 1 of 10</div>
+        <div id="quizTimer" style="font-size:14px;font-weight:600;color:var(--ph)">⏱ 00:00</div>
+      </div>
+      <div class="progress-wrap" style="margin-bottom:20px">
+        <div class="progress-bar"><div class="progress-fill" id="quizProgressBar" style="width:10%;background:var(--ph)"></div></div>
+      </div>
+      <div class="question-card">
+        <div class="question-num" id="questionNum">Question 1</div>
+        <div class="question-text" id="questionText"></div>
+        <div class="options" id="optionsGrid"></div>
+      </div>
+      <div class="quiz-actions">
+        <button class="btn btn-primary" id="nextBtn" onclick="nextQuestion()" style="display:none">Next →</button>
+        <button class="btn btn-secondary" id="skipBtn" onclick="skipQuestion()">Skip</button>
+      </div>
+    </div>
+  </div>
+  <div id="resultSection" style="display:none">
+    <div class="card result-card">
+      <div class="result-score" id="resultScore" style="color:var(--ph)">—</div>
+      <div class="result-label">Your Score</div>
+      <div class="result-breakdown">
+        <div class="result-item"><div class="result-item-num" id="resCorrect" style="color:var(--ch)">0</div><div class="result-item-label">Correct</div></div>
+        <div class="result-item"><div class="result-item-num" id="resWrong" style="color:#ef4444">0</div><div class="result-item-label">Wrong</div></div>
+        <div class="result-item"><div class="result-item-num" id="resSkipped" style="color:var(--text3)">0</div><div class="result-item-label">Skipped</div></div>
+      </div>
+      <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+        <button class="btn btn-primary" onclick="startQuiz(lastQuizType)">Try Again</button>
+        <button class="btn btn-secondary" onclick="exitQuiz()">Back to Tests</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ANALYTICS -->
+<div class="page" id="page-analytics">
+  <div class="page-header">
+    <h1 class="page-title">📊 Analytics</h1>
+    <p class="page-sub">Track your preparation progress over time</p>
+  </div>
+  <div class="grid-4" style="margin-bottom:24px">
+    <div class="card stat-card"><div class="stat-num" id="an-total" style="color:var(--ph)">0</div><div class="stat-label">Total Chapters Done</div></div>
+    <div class="card stat-card"><div class="stat-num" id="an-pct" style="color:var(--ch)">0%</div><div class="stat-label">Syllabus Complete</div></div>
+    <div class="card stat-card"><div class="stat-num" id="an-mocks" style="color:var(--re)">0</div><div class="stat-label">Mocks Given</div></div>
+    <div class="card stat-card"><div class="stat-num" id="an-days" style="color:var(--gold)">0</div><div class="stat-label">Study Days</div></div>
+  </div>
+  <div class="analytics-grid">
+    <div class="card">
+      <div style="font-weight:600;font-size:15px;margin-bottom:16px">Subject Progress</div>
+      <div id="subjectBars"></div>
+    </div>
+    <div class="card">
+      <div style="font-weight:600;font-size:15px;margin-bottom:16px">Chapter Status Breakdown</div>
+      <div id="statusBreakdown"></div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:20px">
+    <div style="font-weight:600;font-size:15px;margin-bottom:16px">Upcoming This Week</div>
+    <div id="upcomingWeek"></div>
+  </div>
+</div>
+
+<!-- SETTINGS -->
+<div class="page" id="page-settings">
+  <div class="page-header">
+    <h1 class="page-title">⚙️ Settings</h1>
+    <p class="page-sub">Customize your prep experience</p>
+  </div>
+  <div class="card" style="max-width:600px">
+    <div class="settings-section">
+      <div class="settings-title">Appearance</div>
+      <div class="setting-row">
+        <div><div class="setting-label">Theme</div><div class="setting-sub">Light or dark interface</div></div>
+        <button class="btn btn-secondary" onclick="toggleTheme()" id="themeBtn">🌙 Dark</button>
+      </div>
+    </div>
+    <div class="settings-section">
+      <div class="settings-title">Exam Info</div>
+      <div class="setting-row">
+        <div><div class="setting-label">JEE Session 1 Date</div><div class="setting-sub">Target exam date</div></div>
+        <input type="date" class="setting-input" value="2027-01-21" id="examDate" onchange="saveSettings()">
+      </div>
+      <div class="setting-row">
+        <div><div class="setting-label">Daily Study Hours</div><div class="setting-sub">Target hours per day</div></div>
+        <input type="number" class="setting-input" value="10" min="4" max="16" id="studyHours" onchange="saveSettings()">
+      </div>
+    </div>
+    <div class="settings-section">
+      <div class="settings-title">Data</div>
+      <div class="setting-row">
+        <div><div class="setting-label">Reset All Progress</div><div class="setting-sub">Clear all chapter status & test history</div></div>
+        <button class="btn btn-danger" onclick="resetAll()">Reset</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+</main>
+</div>
+
+<script>
+// ============================================================
+// DATA
+// ============================================================
+const SUBJECTS = {
+  Physics: {
+    color: 'ph', total: 30,
+    chapters: [
+      {name:'Units & Measurement', cls:11, weight:'medium'},
+      {name:'Kinematics', cls:11, weight:'high'},
+      {name:'Laws of Motion', cls:11, weight:'high'},
+      {name:'Work, Energy & Power', cls:11, weight:'high'},
+      {name:'System of Particles & Rotational Motion', cls:11, weight:'high'},
+      {name:'Gravitation', cls:11, weight:'medium'},
+      {name:'Mechanical Properties of Solids', cls:11, weight:'low'},
+      {name:'Mechanical Properties of Fluids', cls:11, weight:'medium'},
+      {name:'Thermal Properties of Matter', cls:11, weight:'medium'},
+      {name:'Thermodynamics', cls:11, weight:'high'},
+      {name:'Kinetic Theory of Gases', cls:11, weight:'medium'},
+      {name:'Oscillations', cls:11, weight:'high'},
+      {name:'Waves', cls:11, weight:'high'},
+      {name:'Ray Optics & Optical Instruments', cls:12, weight:'high'},
+      {name:'Wave Optics', cls:12, weight:'high'},
+      {name:'Electric Charges & Fields', cls:12, weight:'high'},
+      {name:'Electrostatic Potential & Capacitance', cls:12, weight:'high'},
+      {name:'Current Electricity', cls:12, weight:'high'},
+      {name:'Moving Charges & Magnetism', cls:12, weight:'high'},
+      {name:'Magnetism & Matter', cls:12, weight:'medium'},
+      {name:'Electromagnetic Induction', cls:12, weight:'high'},
+      {name:'Alternating Current', cls:12, weight:'high'},
+      {name:'Electromagnetic Waves', cls:12, weight:'low'},
+      {name:'Dual Nature of Radiation & Matter', cls:12, weight:'medium'},
+      {name:'Atoms', cls:12, weight:'medium'},
+      {name:'Nuclei', cls:12, weight:'medium'},
+      {name:'Semiconductor Electronics', cls:12, weight:'medium'},
+      {name:'Communication Systems', cls:12, weight:'low'},
+      {name:'Experimental Skills', cls:12, weight:'medium'},
+      {name:'Modern Physics', cls:12, weight:'high'}
+    ]
+  },
+  Chemistry: {
+    color: 'ch', total: 30,
+    chapters: [
+      {name:'Basic Concepts of Chemistry', cls:11, weight:'high'},
+      {name:'Structure of Atom', cls:11, weight:'high'},
+      {name:'Classification of Elements (Periodic Table)', cls:11, weight:'medium'},
+      {name:'Chemical Bonding & Molecular Structure', cls:11, weight:'high'},
+      {name:'States of Matter: Gases & Liquids', cls:11, weight:'medium'},
+      {name:'Thermodynamics', cls:11, weight:'high'},
+      {name:'Equilibrium', cls:11, weight:'high'},
+      {name:'Redox Reactions', cls:11, weight:'medium'},
+      {name:'Hydrogen', cls:11, weight:'low'},
+      {name:'s-Block Elements', cls:11, weight:'medium'},
+      {name:'p-Block Elements (Group 13 & 14)', cls:11, weight:'medium'},
+      {name:'Organic Chemistry: Basic Principles', cls:11, weight:'high'},
+      {name:'Hydrocarbons', cls:11, weight:'high'},
+      {name:'Environmental Chemistry', cls:11, weight:'low'},
+      {name:'Solutions', cls:12, weight:'high'},
+      {name:'Electrochemistry', cls:12, weight:'high'},
+      {name:'Chemical Kinetics', cls:12, weight:'high'},
+      {name:'Surface Chemistry', cls:12, weight:'medium'},
+      {name:'General Principles of Isolation of Elements', cls:12, weight:'medium'},
+      {name:'p-Block Elements (Group 15–18)', cls:12, weight:'high'},
+      {name:'d & f-Block Elements', cls:12, weight:'medium'},
+      {name:'Coordination Compounds', cls:12, weight:'high'},
+      {name:'Haloalkanes & Haloarenes', cls:12, weight:'high'},
+      {name:'Alcohols, Phenols & Ethers', cls:12, weight:'high'},
+      {name:'Aldehydes, Ketones & Carboxylic Acids', cls:12, weight:'high'},
+      {name:'Amines', cls:12, weight:'high'},
+      {name:'Biomolecules', cls:12, weight:'medium'},
+      {name:'Polymers', cls:12, weight:'medium'},
+      {name:'Chemistry in Everyday Life', cls:12, weight:'low'},
+      {name:'Analytical Chemistry', cls:12, weight:'medium'}
+    ]
+  },
+  Mathematics: {
+    color: 'ma', total: 31,
+    chapters: [
+      {name:'Sets, Relations & Functions', cls:11, weight:'high'},
+      {name:'Trigonometric Functions', cls:11, weight:'high'},
+      {name:'Principle of Mathematical Induction', cls:11, weight:'medium'},
+      {name:'Complex Numbers & Quadratic Equations', cls:11, weight:'high'},
+      {name:'Linear Inequalities', cls:11, weight:'medium'},
+      {name:'Permutations & Combinations', cls:11, weight:'high'},
+      {name:'Binomial Theorem', cls:11, weight:'high'},
+      {name:'Sequences & Series', cls:11, weight:'high'},
+      {name:'Straight Lines', cls:11, weight:'high'},
+      {name:'Conic Sections', cls:11, weight:'high'},
+      {name:'Introduction to 3D Geometry', cls:11, weight:'medium'},
+      {name:'Limits & Derivatives', cls:11, weight:'high'},
+      {name:'Mathematical Reasoning', cls:11, weight:'low'},
+      {name:'Statistics', cls:11, weight:'medium'},
+      {name:'Probability (11th)', cls:11, weight:'high'},
+      {name:'Relations & Functions (12th)', cls:12, weight:'high'},
+      {name:'Inverse Trigonometric Functions', cls:12, weight:'high'},
+      {name:'Matrices', cls:12, weight:'high'},
+      {name:'Determinants', cls:12, weight:'high'},
+      {name:'Continuity & Differentiability', cls:12, weight:'high'},
+      {name:'Applications of Derivatives', cls:12, weight:'high'},
+      {name:'Integrals', cls:12, weight:'high'},
+      {name:'Applications of Integrals', cls:12, weight:'medium'},
+      {name:'Differential Equations', cls:12, weight:'high'},
+      {name:'Vectors', cls:12, weight:'high'},
+      {name:'3D Geometry', cls:12, weight:'high'},
+      {name:'Linear Programming', cls:12, weight:'medium'},
+      {name:'Probability (12th)', cls:12, weight:'high'},
+      {name:'Mathematical Induction (Advanced)', cls:12, weight:'medium'},
+      {name:'Number Theory & Miscellaneous', cls:12, weight:'medium'},
+      {name:'Coordinate Geometry (Advanced)', cls:12, weight:'high'}
+    ]
+  }
+};
+
+// Theory data
+const THEORY = {
+  'Kinematics': {
+    subject: 'Physics',
+    formulas: ['v = u + at', 's = ut + ½at²', 'v² = u² + 2as', 'Range R = u²sin2θ/g', 'H_max = u²sin²θ/2g', 'T = 2u sinθ/g'],
+    tips: ['Projectile motion: horizontal velocity stays constant', 'For relative motion, always draw vector diagram', 'Acceleration due to gravity g = 9.8 ≈ 10 m/s²', 'Distance ≠ Displacement (scalar vs vector)', 'JEE loves: Relative velocity problems, projectile on incline'],
+    mistakes: ['Mixing up speed and velocity', 'Forgetting to add initial velocity in integration']
+  },
+  'Laws of Motion': {
+    subject: 'Physics',
+    formulas: ['F = ma', 'F_friction = μN', 'F_net = Δp/Δt', 'Tension in Atwood: T = 2m₁m₂g/(m₁+m₂)'],
+    tips: ['Always draw Free Body Diagram (FBD) first', 'Pseudo force = ma (in non-inertial frame)', 'Static friction ≤ μₛN', 'Kinetic friction = μₖN (constant)'],
+    mistakes: ['Not considering all forces', 'Wrong direction of normal force on incline']
+  },
+  'Work, Energy & Power': {
+    subject: 'Physics',
+    formulas: ['W = F·d·cosθ', 'KE = ½mv²', 'PE = mgh', 'W_net = ΔKE', 'Power P = W/t = F·v'],
+    tips: ['Work-Energy theorem is most powerful tool', 'Conservative forces: work = -ΔPE', 'Spring PE = ½kx²', 'Coefficient of restitution e = relative speed after/before'],
+    mistakes: ['Forgetting negative work by friction', 'Using conservation of energy when friction is present']
+  },
+  'Thermodynamics': {
+    subject: 'Physics',
+    formulas: ['ΔU = Q - W', 'W = PΔV (isobaric)', 'Efficiency η = 1 - T₂/T₁', 'PV = nRT', 'Cp - Cv = R'],
+    tips: ['For isothermal: ΔU = 0, Q = W', 'For adiabatic: Q = 0, ΔU = -W', 'For isochoric: W = 0, ΔU = Q', 'Carnot efficiency is maximum possible', 'γ = Cp/Cv = 5/3 (monoatomic), 7/5 (diatomic)'],
+    mistakes: ['Sign convention for Q and W', 'Confusing intensive and extensive properties']
+  },
+  'Current Electricity': {
+    subject: 'Physics',
+    formulas: ['V = IR (Ohm\'s Law)', 'P = VI = I²R = V²/R', 'R_series = R₁+R₂+...', '1/R_parallel = 1/R₁+1/R₂+...', 'EMF = I(R+r)', 'Wheatstone: P/Q = R/S'],
+    tips: ['Kirchhoff\'s laws: KCL (junction) + KVL (loop)', 'Meter bridge: unknown resistance X = R(100-l)/l', 'Potentiometer is used for accurate EMF measurement', 'Temperature coefficient: R = R₀(1+αΔT)'],
+    mistakes: ['Wrong direction of current in KVL', 'Confusing EMF and terminal voltage']
+  },
+  'Mole Concept': {
+    subject: 'Chemistry',
+    formulas: ['Moles = given mass / molar mass', 'N = n × Nₐ (6.022×10²³)', 'Molarity M = moles/volume(L)', 'Molality m = moles/kg of solvent', 'Mole fraction = n₁/(n₁+n₂)'],
+    tips: ['POAC: Principle of Atom Conservation is key', 'Limiting reagent gives minimum product', 'Normality = Molarity × n-factor', 'Parts per million (ppm) = mg/L for dilute solutions'],
+    mistakes: ['Mixing molecular mass with formula mass', 'Not balancing equation before stoichiometry']
+  },
+  'Chemical Bonding & Molecular Structure': {
+    subject: 'Chemistry',
+    formulas: ['Bond order = (Nb - Na)/2', 'VSEPR: AXₙEₘ → geometry', 'Formal charge = V - L - B/2'],
+    tips: ['sp³: tetrahedral, sp²: trigonal planar, sp: linear', 'Hybridization = σ bonds + lone pairs on central atom', 'More lone pairs → more repulsion → more distortion', 'PCl₅ has sp³d (trigonal bipyramidal)', 'SF₆ has sp³d² (octahedral)'],
+    mistakes: ['Forgetting back bonding in BF₃', 'Wrong hybridization for expanded octet compounds']
+  },
+  'Equilibrium': {
+    subject: 'Chemistry',
+    formulas: ['Kc = [C]^c[D]^d / [A]^a[B]^b', 'Kp = Kc(RT)^Δn', 'pH = -log[H⁺]', 'pH + pOH = 14', 'Ka × Kb = Kw = 10⁻¹⁴'],
+    tips: ['Le Chatelier: pressure ↑ → equilibrium shifts to fewer moles', 'Buffer pH = pKa + log([A⁻]/[HA])', 'Common ion effect suppresses ionization', 'Strong acid: complete ionization, weak acid: partial'],
+    mistakes: ['Including solids/liquids in Kc expression', 'Forgetting to check if Kp = Kc or not']
+  },
+  'Electrochemistry': {
+    subject: 'Chemistry',
+    formulas: ['E°cell = E°cathode - E°anode', 'ΔG° = -nFE°', 'E = E° - (RT/nF)lnQ (Nernst)', 'W = Q × V = It × V', 'Λm = Λ°m - b√C (Kohlrausch)'],
+    tips: ['Higher SRP → better oxidizing agent (cathode)', 'Lower SRP → better reducing agent (anode)', 'Faraday: 96500 C deposits 1 equivalent', 'Conductance increases with temperature (electrolytes)'],
+    mistakes: ['Wrong sign for Gibbs energy', 'Confusing electrolytic and galvanic cells']
+  },
+  'Organic Chemistry Basics': {
+    subject: 'Chemistry',
+    formulas: ['Inductive effect: -I order: -NO₂ > -CN > -F > -Cl > -Br > -I', 'Resonance stabilizes carbocation', '+M groups: -OH, -OR, -NH₂, -NR₂', '-M groups: -NO₂, -CN, -CHO, -COOH'],
+    tips: ['SN1: tertiary > secondary (stability of carbocation)', 'SN2: primary > secondary (steric factor)', 'E2 requires anti-periplanar arrangement', 'Markovnikov: H adds to C with more H (in electrophilic addition)', 'Zaitsev rule: more substituted alkene preferred in E2'],
+    mistakes: ['Confusing +I and -I effects', 'Wrong product in Markovnikov vs Anti-Markovnikov']
+  },
+  'Coordinate Geometry': {
+    subject: 'Mathematics',
+    formulas: ['Distance = √[(x₂-x₁)²+(y₂-y₁)²]', 'Slope m = (y₂-y₁)/(x₂-x₁)', 'y-y₁ = m(x-x₁) (point-slope)', 'Circle: (x-h)²+(y-k)²=r²', 'Parabola: y²=4ax, focus (a,0)'],
+    tips: ['For JEE: family of circles, common chord are important', 'Tangent to y²=4ax at (at², 2at): ty = x+at²', 'Normal slope = -1/m where m = slope of tangent', 'Ellipse: sum of focal distances = 2a', 'Hyperbola: |difference of focal distances| = 2a'],
+    mistakes: ['Forgetting ±√ in circle equation', 'Wrong eccentricity for different conics']
+  },
+  'Calculus - Integration': {
+    subject: 'Mathematics',
+    formulas: ['∫xⁿ dx = xⁿ⁺¹/(n+1) + C', '∫eˣ dx = eˣ + C', '∫sin x dx = -cos x + C', '∫1/x dx = ln|x| + C', '∫ by parts: ∫u·v = u∫v - ∫(u\'∫v)'],
+    tips: ['ILATE rule for integration by parts: Inverse, Log, Algebraic, Trig, Exponential', 'For definite integrals: use properties to simplify', '∫₀ᵃ f(x)dx = ∫₀ᵃ f(a-x)dx is very useful', 'King\'s property: ∫ₐᵇ f(x)dx = ∫ₐᵇ f(a+b-x)dx'],
+    mistakes: ['Forgetting constant of integration C', 'Wrong substitution leading to wrong limits']
+  },
+  'Probability': {
+    subject: 'Mathematics',
+    formulas: ['P(A∪B) = P(A)+P(B)-P(A∩B)', 'P(A|B) = P(A∩B)/P(B)', 'Bayes: P(Aᵢ|B) = P(B|Aᵢ)P(Aᵢ)/ΣP(B|Aⱼ)P(Aⱼ)', 'Binomial: P(X=r) = ⁿCᵣ pʳ qⁿ⁻ʳ', 'Mean of Binomial = np, Variance = npq'],
+    tips: ['Conditional probability changes sample space', 'Independent events: P(A∩B) = P(A)·P(B)', 'Mutually exclusive: P(A∩B) = 0', 'JEE loves: dice problems, card problems, Bayes theorem'],
+    mistakes: ['Confusing mutually exclusive and independent', 'Not reducing sample space in conditional probability']
+  }
+};
+
+// Questions bank
+const QUESTIONS = [
+  {q:'A body starts from rest and travels with uniform acceleration of 2 m/s². Distance covered in 5th second is?', opts:['8 m','9 m','10 m','7 m'], ans:1, sub:'Physics', ch:'Kinematics'},
+  {q:'Which of the following is dimensionless?', opts:['Strain','Stress','Force','Pressure'], ans:0, sub:'Physics', ch:'Units'},
+  {q:'A block of mass 2 kg is placed on a rough surface (μ = 0.3). Minimum force to move it (g=10)?', opts:['3 N','6 N','5 N','8 N'], ans:1, sub:'Physics', ch:'Laws of Motion'},
+  {q:'The work done by gravity when a body of mass 5 kg falls 10 m is?', opts:['500 J','50 J','-500 J','0 J'], ans:0, sub:'Physics', ch:'Work Energy'},
+  {q:'In an ideal gas, PV = nRT. At constant T, if V doubles, P becomes?', opts:['2P','P/2','4P','P'], ans:1, sub:'Physics', ch:'Thermodynamics'},
+  {q:'Two resistors 4Ω and 6Ω are connected in parallel. Equivalent resistance is?', opts:['10 Ω','2.4 Ω','5 Ω','24 Ω'], ans:1, sub:'Physics', ch:'Current Electricity'},
+  {q:'Molar mass of H₂SO₄ is?', opts:['96 g/mol','98 g/mol','100 g/mol','94 g/mol'], ans:1, sub:'Chemistry', ch:'Mole Concept'},
+  {q:'Hybridization of carbon in CH₄ is?', opts:['sp','sp²','sp³','sp³d'], ans:2, sub:'Chemistry', ch:'Chemical Bonding'},
+  {q:'pH of 0.001 M HCl solution is?', opts:['1','2','3','4'], ans:2, sub:'Chemistry', ch:'Equilibrium'},
+  {q:'Faraday\'s constant value is approximately?', opts:['96500 C/mol','9650 C/mol','96500 J/mol','9.65 C/mol'], ans:0, sub:'Chemistry', ch:'Electrochemistry'},
+  {q:'SN2 reaction rate depends on?', opts:['Nucleophile only','Both substrate and nucleophile','Substrate only','Solvent only'], ans:1, sub:'Chemistry', ch:'Organic Basics'},
+  {q:'The number of ways to select 3 students from 10 is?', opts:['30','120','720','210'], ans:1, sub:'Mathematics', ch:'Permutations'},
+  {q:'Sum of series 1 + 1/2 + 1/4 + ... (infinite GP) is?', opts:['1','2','3','∞'], ans:1, sub:'Mathematics', ch:'Sequences'},
+  {q:'If f(x) = x², then f\'(3) is?', opts:['3','6','9','12'], ans:1, sub:'Mathematics', ch:'Calculus'},
+  {q:'∫₀¹ x dx = ?', opts:['1/4','1/3','1/2','1'], ans:2, sub:'Mathematics', ch:'Integration'},
+  {q:'The distance between points (3,4) and (0,0) is?', opts:['3','4','5','7'], ans:2, sub:'Mathematics', ch:'Coordinate Geometry'},
+  {q:'In Bohr\'s model, radius of nth orbit ∝?', opts:['n','n²','1/n','1/n²'], ans:1, sub:'Physics', ch:'Atoms'},
+  {q:'Molarity of water (density 1 g/mL, MW=18)?', opts:['18','55.5','100','1'], ans:1, sub:'Chemistry', ch:'Mole Concept'},
+  {q:'The wavelength of visible light range is?', opts:['100-400 nm','400-700 nm','700-1000 nm','200-400 nm'], ans:1, sub:'Physics', ch:'Wave Optics'},
+  {q:'Probability of getting head in a fair coin toss?', opts:['0','1/4','1/2','1'], ans:2, sub:'Mathematics', ch:'Probability'},
+];
+
+// ============================================================
+// TIMETABLE GENERATOR
+// ============================================================
+function localDateId(d) {
+  const y = d.getFullYear();
+  const m = String(d.getMonth()+1).padStart(2,'0');
+  const day = String(d.getDate()).padStart(2,'0');
+  return `${y}-${m}-${day}`;
+}
+
+function generateTimetable() {
+  const startDate = new Date(2026, 5, 19); // June 19, 2026 (month is 0-indexed)
+  const endDate = new Date(2027, 0, 20);   // Jan 20, 2027
+  const days = [];
+  
+  // Build chapter queue in NCERT textbook order (Class 11 chapters first, then Class 12 — as listed in SUBJECTS)
+  const queue = [];
+  ['Physics','Chemistry','Mathematics'].forEach(sub => {
+    SUBJECTS[sub].chapters.forEach((ch, i) => {
+      queue.push({subject: sub, chapter: ch.name, cls: ch.cls, weight: ch.weight, idx: i});
+    });
+  });
+  
+  // Split each subject into Class 11 (in order) then Class 12 (in order) — preserves NCERT sequence
+  const ph11 = queue.filter(c=>c.subject==='Physics'&&c.cls===11);
+  const ph12 = queue.filter(c=>c.subject==='Physics'&&c.cls===12);
+  const ch11 = queue.filter(c=>c.subject==='Chemistry'&&c.cls===11);
+  const ch12 = queue.filter(c=>c.subject==='Chemistry'&&c.cls===12);
+  const ma11 = queue.filter(c=>c.subject==='Mathematics'&&c.cls===11);
+  const ma12 = queue.filter(c=>c.subject==='Mathematics'&&c.cls===12);
+  
+  // Interleave subjects day-to-day, but keep each subject's own chapters in NCERT order (Class 11 fully, then Class 12)
+  let allChapters = [];
+  const maxLen11 = Math.max(ph11.length, ch11.length, ma11.length);
+  for(let i=0;i<maxLen11;i++){
+    if(ph11[i]) allChapters.push(ph11[i]);
+    if(ch11[i]) allChapters.push(ch11[i]);
+    if(ma11[i]) allChapters.push(ma11[i]);
+  }
+  const maxLen12 = Math.max(ph12.length, ch12.length, ma12.length);
+  for(let i=0;i<maxLen12;i++){
+    if(ph12[i]) allChapters.push(ph12[i]);
+    if(ch12[i]) allChapters.push(ch12[i]);
+    if(ma12[i]) allChapters.push(ma12[i]);
+  }
+  
+  // Map days to chapters + revision + mock schedule
+  let d = new Date(startDate);
+  let chapIdx = 0;
+  let chapterDayCounter = 0; // days spent on current chapter
+  let dayNum = 0;
+  let mockCount = 0;
+  let allChaptersDone = false;
+  let doneAtDay = null;
+  
+  while(d <= endDate) {
+    const isSunday = d.getDay() === 0;
+    const dayOfWeek = d.getDay();
+    
+    let entry = {
+      date: new Date(d),
+      dateStr: d.toLocaleDateString('en-IN', {day:'2-digit', month:'short', year:'numeric'}),
+      dayName: d.toLocaleDateString('en-IN', {weekday:'short'}),
+      subject: '', chapter: '', type: '', done: false,
+      id: localDateId(d)
+    };
+    
+    if(chapIdx >= allChapters.length && !allChaptersDone) {
+      allChaptersDone = true;
+      doneAtDay = dayNum;
+    }
+    
+    if(allChaptersDone) {
+      // PHASE 2: full syllabus covered -> heavy revision + frequent mocks
+      const sinceDone = dayNum - doneAtDay;
+      if(isSunday) {
+        entry.subject = 'All'; entry.chapter = 'Light Revision + Rest'; entry.type = 'revision';
+      } else if(sinceDone > 0 && sinceDone % 6 === 0) {
+        entry.subject = 'All'; entry.chapter = 'Full Mock Test #' + (++mockCount); entry.type = 'mock';
+      } else {
+        const revSub = ['Physics','Chemistry','Mathematics'][dayNum % 3];
+        entry.subject = revSub; entry.chapter = 'Full Revision + PYQ Practice'; entry.type = 'revision';
+      }
+    }
+    else if(dayNum > 0 && dayNum % 14 === 0) {
+      // PHASE 1: still learning -> mock every 14 days
+      entry.subject = 'All';
+      entry.chapter = 'Full Mock Test #' + (++mockCount);
+      entry.type = 'mock';
+    }
+    else if(isSunday) {
+      entry.subject = 'All';
+      entry.chapter = 'Light Revision + Rest';
+      entry.type = 'revision';
+    }
+    else {
+      // Normal study day — move through chapters
+      const ch = allChapters[chapIdx];
+      entry.subject = ch.subject;
+      entry.chapter = ch.chapter + ' (Class ' + ch.cls + ')';
+      entry.type = dayOfWeek <= 3 ? 'theory' : 'practice';
+      chapterDayCounter++;
+      const daysAllowed = ch.weight === 'high' ? 2 : 1;
+      if(chapterDayCounter >= daysAllowed) {
+        chapIdx++;
+        chapterDayCounter = 0;
+      }
+    }
+    
+    days.push(entry);
+    d.setDate(d.getDate() + 1);
+    dayNum++;
+  }
+  
+  return days;
+}
+
+// ============================================================
+// STATE
+// ============================================================
+let state = {
+  chapterStatus: {}, // chapterKey: 'none'|'reading'|'done'|'revised'
+  daysDone: {},      // dateId: true
+  testHistory: [],
+  theme: 'dark',
+  examDate: '2027-01-21',
+  studyHours: 10
+};
+
+let timetable = [];
+let currentQuiz = {questions:[], idx:0, answers:[], type:'chapter', timer:null, elapsed:0};
+let lastQuizType = 'chapter';
+let currentWeek = 0;
+let theoryFilter = 'all';
+
+// ============================================================
+// INIT
+// ============================================================
+function init() {
+  loadState();
+  timetable = generateTimetable();
+  
+  // Greet
+  const now = new Date();
+  const h = now.getHours();
+  const greet = h < 12 ? 'Good morning' : h < 17 ? 'Good afternoon' : 'Good evening';
+  document.querySelector('.page-title').textContent = greet + '! 🚀';
+  document.getElementById('dashboard-date').textContent = now.toLocaleDateString('en-IN', {weekday:'long', day:'numeric', month:'long', year:'numeric'});
+  
+  // Apply theme
+  if(state.theme === 'light') applyLight();
+  
+  renderDashboard();
+  renderWeekTabs();
+  renderCurrentWeek();
+  renderTracker();
+  renderTheory();
+  renderAnalytics();
+}
+
+// ============================================================
+// STORAGE
+// ============================================================
+function saveState() { try { localStorage.setItem('jeeprep', JSON.stringify(state)); } catch(e){} }
+function loadState() {
+  try {
+    const s = localStorage.getItem('jeeprep');
+    if(s) state = {...state, ...JSON.parse(s)};
+  } catch(e) {}
+}
+
+// ============================================================
+// THEME
+// ============================================================
+function toggleTheme() {
+  state.theme = state.theme === 'dark' ? 'light' : 'dark';
+  saveState();
+  if(state.theme === 'light') applyLight(); else applyDark();
+}
+function applyLight() {
+  document.body.classList.add('light');
+  document.getElementById('themeSwitch').classList.add('on');
+  document.getElementById('theme-label').textContent = '☀️ Light Mode';
+  if(document.getElementById('themeBtn')) document.getElementById('themeBtn').textContent = '☀️ Light';
+}
+function applyDark() {
+  document.body.classList.remove('light');
+  document.getElementById('themeSwitch').classList.remove('on');
+  document.getElementById('theme-label').textContent = '🌙 Dark Mode';
+  if(document.getElementById('themeBtn')) document.getElementById('themeBtn').textContent = '🌙 Dark';
+}
+
+// ============================================================
+// NAVIGATION
+// ============================================================
+function showPage(page, el) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  if(el) el.classList.add('active');
+  if(page === 'analytics') renderAnalytics();
+  if(window.innerWidth < 860) toggleSidebar();
+  window.scrollTo(0,0);
+}
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('overlay').classList.toggle('open');
+}
+
+// ============================================================
+// DASHBOARD
+// ============================================================
+function renderDashboard() {
+  // Days to JEE
+  const exam = new Date(state.examDate);
+  const today = new Date(); today.setHours(0,0,0,0);
+  const diff = Math.ceil((exam - today) / 86400000);
+  document.getElementById('daysLeft').textContent = diff > 0 ? diff : '🎉';
+  
+  // Today's entry
+  const todayId = localDateId(today);
+  const todayEntry = timetable.find(d => d.id === todayId);
+  if(todayEntry) {
+    document.getElementById('todayChapter').textContent = todayEntry.chapter;
+    const meta = document.getElementById('todayMeta');
+    const subColor = todayEntry.subject === 'Physics' ? 'ph' : todayEntry.subject === 'Chemistry' ? 'ch' : todayEntry.subject === 'Mathematics' ? 'ma' : 'mock';
+    meta.innerHTML = `<span class="badge badge-${subColor}">${todayEntry.subject}</span><span class="tag tag-${todayEntry.type}">${todayEntry.type.toUpperCase()}</span><span style="font-size:12px;color:var(--text2)">${todayEntry.dayName}, ${todayEntry.dateStr}</span>`;
+  }
+  
+  // Chapter counts
+  const phDone = Object.keys(state.chapterStatus).filter(k => k.startsWith('Physics_') && (state.chapterStatus[k]==='done'||state.chapterStatus[k]==='revised')).length;
+  const chDone = Object.keys(state.chapterStatus).filter(k => k.startsWith('Chemistry_') && (state.chapterStatus[k]==='done'||state.chapterStatus[k]==='revised')).length;
+  const maDone = Object.keys(state.chapterStatus).filter(k => k.startsWith('Mathematics_') && (state.chapterStatus[k]==='done'||state.chapterStatus[k]==='revised')).length;
+  const total = phDone + chDone + maDone;
+  
+  document.getElementById('chapDone').textContent = total;
+  document.getElementById('mocksDone').textContent = state.testHistory.length;
+  
+  // Progress bars
+  const phPct = Math.round(phDone/30*100);
+  const chPct = Math.round(chDone/30*100);
+  const maPct = Math.round(maDone/31*100);
+  document.getElementById('ph-bar').style.width = phPct+'%';
+  document.getElementById('ch-bar').style.width = chPct+'%';
+  document.getElementById('ma-bar').style.width = maPct+'%';
+  document.getElementById('ph-pct').textContent = phPct+'%';
+  document.getElementById('ch-pct').textContent = chPct+'%';
+  document.getElementById('ma-pct').textContent = maPct+'%';
+  document.getElementById('ph-count').textContent = phDone + ' / 30 chapters';
+  document.getElementById('ch-count').textContent = chDone + ' / 30 chapters';
+  document.getElementById('ma-count').textContent = maDone + ' / 31 chapters';
+  
+  // Streak
+  let streak = 0;
+  const d = new Date(today);
+  while(true) {
+    const id = localDateId(d);
+    if(state.daysDone[id]) { streak++; d.setDate(d.getDate()-1); }
+    else break;
+    if(streak > 365) break;
+  }
+  document.getElementById('streakCount').textContent = streak + '🔥';
+  
+  // Streak dots (last 30 days)
+  const dots = document.getElementById('streakDots');
+  dots.innerHTML = '';
+  for(let i=29; i>=0; i--) {
+    const dd = new Date(today); dd.setDate(dd.getDate()-i);
+    const id = localDateId(dd);
+    const dot = document.createElement('div');
+    dot.className = 'streak-dot' + (state.daysDone[id] ? ' done' : '');
+    dot.title = dd.toLocaleDateString('en-IN', {day:'numeric',month:'short'});
+    dots.appendChild(dot);
+  }
+}
+
+// ============================================================
+// TIMETABLE
+// ============================================================
+function renderWeekTabs() {
+  const tabs = document.getElementById('weekTabs');
+  tabs.innerHTML = '';
+  // Group by weeks
+  const totalWeeks = Math.ceil(timetable.length / 7);
+  for(let w=0; w<totalWeeks; w++) {
+    const start = timetable[w*7];
+    const end = timetable[Math.min((w+1)*7-1, timetable.length-1)];
+    const tab = document.createElement('div');
+    tab.className = 'week-tab' + (w===currentWeek?' active':'');
+    tab.textContent = 'Week '+(w+1);
+    tab.title = start.dateStr + ' → ' + end.dateStr;
+    tab.onclick = () => { currentWeek=w; renderWeekTabs(); renderCurrentWeek(); };
+    tabs.appendChild(tab);
+  }
+}
+
+function renderCurrentWeek() {
+  const grid = document.getElementById('timetableGrid');
+  grid.innerHTML = '';
+  const weekDays = timetable.slice(currentWeek*7, (currentWeek+1)*7);
+  const todayId = localDateId(new Date());
+  
+  weekDays.forEach(day => {
+    const isToday = day.id === todayId;
+    const isDone = state.daysDone[day.id];
+    const subColor = day.subject==='Physics'?'ph':day.subject==='Chemistry'?'ch':day.subject==='Mathematics'?'ma':'mock';
+    
+    const row = document.createElement('div');
+    row.className = 'day-row' + (isToday?' today-row':'') + (isDone?' completed':'');
+    row.innerHTML = `
+      <div>
+        <div class="day-date">${day.dayName}</div>
+        <div class="day-dayname">${day.dateStr}</div>
+        ${isToday ? '<span style="font-size:10px;color:var(--ph);font-weight:700">● TODAY</span>' : ''}
+      </div>
+      <div><span class="badge badge-${subColor}">${day.subject}</span></div>
+      <div class="day-chapter">${day.chapter}</div>
+      <div><span class="tag tag-${day.type}">${day.type.toUpperCase()}</span></div>
+      <div class="day-check${isDone?' done':''}" onclick="toggleDayDone('${day.id}',this)" title="Mark complete"></div>
+    `;
+    grid.appendChild(row);
+  });
+}
+
+function toggleDayDone(id, el) {
+  if(state.daysDone[id]) { delete state.daysDone[id]; el.classList.remove('done'); el.parentElement.classList.remove('completed'); }
+  else { state.daysDone[id] = true; el.classList.add('done'); el.parentElement.classList.add('completed'); }
+  saveState();
+  renderDashboard();
+}
+
+// ============================================================
+// CHAPTER TRACKER
+// ============================================================
+function renderTracker() {
+  const cont = document.getElementById('trackerContent');
+  cont.innerHTML = '';
+  
+  ['Physics','Chemistry','Mathematics'].forEach(sub => {
+    const color = SUBJECTS[sub].color;
+    const chapters = SUBJECTS[sub].chapters;
+    const done = chapters.filter((_,i) => {
+      const k = sub+'_'+i;
+      return state.chapterStatus[k]==='done'||state.chapterStatus[k]==='revised';
+    }).length;
+    const pct = Math.round(done/chapters.length*100);
+    
+    const sec = document.createElement('div');
+    sec.clsName = 'subject-section';
+    sec.innerHTML = `
+      <div class="subject-header">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span class="subject-title" style="color:var(--${color})">${sub==='Physics'?'⚡':sub==='Chemistry'?'🧪':'📐'} ${sub}</span>
+          <span class="badge badge-${color}">${done}/${chapters.length}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;min-width:160px">
+          <div class="progress-bar" style="flex:1"><div class="progress-fill" style="width:${pct}%;background:var(--${color})"></div></div>
+          <span style="font-size:13px;color:var(--${color});font-weight:600">${pct}%</span>
+        </div>
+      </div>
+      <div class="chapters-grid" id="chapters-${sub}"></div>
+    `;
+    cont.appendChild(sec);
+    
+    const grid = document.getElementById('chapters-'+sub);
+    chapters.forEach((ch, i) => {
+      const k = sub+'_'+i;
+      const status = state.chapterStatus[k] || 'none';
+      const card = document.createElement('div');
+      card.className = 'chapter-card' + (status==='done'||status==='revised'?' done':'');
+      card.innerHTML = `
+        <span class="chapter-num">${i+1}</span>
+        <div>
+          <div class="chapter-name">${ch.name}</div>
+          <div style="display:flex;gap:6px;margin-top:4px">
+            <span style="font-size:10px;color:var(--text3)">Class ${ch.cls}</span>
+            <span style="font-size:10px;color:${ch.weight==='high'?'var(--ma)':ch.weight==='medium'?'var(--ph)':'var(--text3)'}">${ch.weight==='high'?'★ High':ch.weight==='medium'?'◆ Med':'◇ Low'}</span>
+          </div>
+        </div>
+        <select class="status-select" onchange="updateChapterStatus('${k}',this.value,this)">
+          <option value="none" ${status==='none'?'selected':''}>Not Started</option>
+          <option value="reading" ${status==='reading'?'selected':''}>In Progress</option>
+          <option value="done" ${status==='done'?'selected':''}>✓ Done</option>
+          <option value="revised" ${status==='revised'?'selected':''}>⭐ Revised</option>
+        </select>
+      `;
+      grid.appendChild(card);
+    });
+  });
+}
+
+function updateChapterStatus(key, val, selectEl) {
+  state.chapterStatus[key] = val;
+  saveState();
+  const card = selectEl.closest('.chapter-card');
+  if(val==='done'||val==='revised') card.classList.add('done'); else card.classList.remove('done');
+  renderDashboard();
+}
+
+// ============================================================
+// THEORY
+// ============================================================
+function renderTheory() {
+  const cont = document.getElementById('theoryContent');
+  cont.innerHTML = '';
+  const entries = Object.entries(THEORY);
+  
+  entries.forEach(([name, data]) => {
+    if(theoryFilter !== 'all' && data.subject !== theoryFilter) return;
+    const color = data.subject==='Physics'?'ph':data.subject==='Chemistry'?'ch':'ma';
+    
+    const wrap = document.createElement('div');
+    wrap.className = 'theory-chapter';
+    wrap.dataset.subject = data.subject;
+    wrap.innerHTML = `
+      <div class="theory-header" onclick="toggleTheory(this)">
+        <div style="display:flex;align-items:center;gap:12px">
+          <span class="badge badge-${color}">${data.subject}</span>
+          <span class="theory-title">${name}</span>
+        </div>
+        <span class="theory-chevron">▾</span>
+      </div>
+      <div class="theory-body">
+        <div class="theory-section">
+          <div class="theory-section-title">📐 Key Formulas</div>
+          <div class="formula-box">${data.formulas.join('<br>')}</div>
+        </div>
+        <div class="theory-section">
+          <div class="theory-section-title">💡 JEE Tips</div>
+          ${data.tips.map(t=>`<div class="tip-item">${t}</div>`).join('')}
+        </div>
+        <div class="theory-section">
+          <div class="theory-section-title">⚠️ Common Mistakes</div>
+          ${data.mistakes.map(m=>`<div class="tip-item" style="--ph:var(--ma)">${m}</div>`).join('')}
+        </div>
+      </div>
+    `;
+    cont.appendChild(wrap);
+  });
+  
+  if(cont.children.length === 0) {
+    cont.innerHTML = '<div class="empty-state"><div class="empty-icon">📚</div><div>No theory notes for this filter yet.</div></div>';
+  }
+}
+
+function toggleTheory(header) {
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.theory-chevron');
+  body.classList.toggle('open');
+  chevron.style.transform = body.classList.contains('open') ? 'rotate(180deg)' : '';
+}
+
+function filterTheory(filter, el) {
+  theoryFilter = filter;
+  document.querySelectorAll('#theoryTabs .week-tab').forEach(t=>t.classList.remove('active'));
+  el.classList.add('active');
+  renderTheory();
+}
+
+// ============================================================
+// MOCK TEST / QUIZ
+// ============================================================
+function startQuiz(type) {
+  lastQuizType = type;
+  document.getElementById('mockHome').style.display = 'none';
+  document.getElementById('resultSection').style.display = 'none';
+  document.getElementById('quizSection').style.display = 'block';
+  
+  // Pick questions
+  let pool = [...QUESTIONS];
+  // Shuffle
+  for(let i=pool.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[pool[i],pool[j]]=[pool[j],pool[i]];}
+  
+  const count = type === 'full' ? Math.min(15, pool.length) : 10;
+  currentQuiz = {
+    questions: pool.slice(0, count),
+    idx: 0, answers: [], type, timer: null, elapsed: 0
+  };
+  
+  // Start timer
+  if(currentQuiz.timer) clearInterval(currentQuiz.timer);
+  currentQuiz.timer = setInterval(() => {
+    currentQuiz.elapsed++;
+    const m = String(Math.floor(currentQuiz.elapsed/60)).padStart(2,'0');
+    const s = String(currentQuiz.elapsed%60).padStart(2,'0');
+    document.getElementById('quizTimer').textContent = '⏱ '+m+':'+s;
+  }, 1000);
+  
+  showQuestion();
+}
+
+function showQuestion() {
+  const q = currentQuiz.questions[currentQuiz.idx];
+  const total = currentQuiz.questions.length;
+  const idx = currentQuiz.idx;
+  
+  document.getElementById('questionNum').textContent = `Question ${idx+1} · ${q.sub} · ${q.ch}`;
+  document.getElementById('questionText').textContent = q.q;
+  document.getElementById('quizProgressText').textContent = `Question ${idx+1} of ${total}`;
+  document.getElementById('quizProgressBar').style.width = ((idx+1)/total*100)+'%';
+  document.getElementById('nextBtn').style.display = 'none';
+  document.getElementById('skipBtn').style.display = 'inline-flex';
+  
+  const opts = document.getElementById('optionsGrid');
+  opts.innerHTML = '';
+  q.opts.forEach((opt, i) => {
+    const div = document.createElement('div');
+    div.className = 'option';
+    div.innerHTML = `<div class="option-letter">${String.fromCharCode(65+i)}</div>${opt}`;
+    div.onclick = () => selectOption(i, div);
+    opts.appendChild(div);
+  });
+}
+
+function selectOption(i, el) {
+  const q = currentQuiz.questions[currentQuiz.idx];
+  document.querySelectorAll('.option').forEach(o => o.onclick = null);
+  currentQuiz.answers[currentQuiz.idx] = i;
+  
+  document.querySelectorAll('.option').forEach((o, j) => {
+    if(j === q.ans) o.classList.add('correct');
+    else if(j === i && i !== q.ans) o.classList.add('wrong');
+  });
+  el.classList.add('selected');
+  
+  document.getElementById('nextBtn').style.display = 'inline-flex';
+  document.getElementById('skipBtn').style.display = 'none';
+}
+
+function nextQuestion() {
+  currentQuiz.idx++;
+  if(currentQuiz.idx >= currentQuiz.questions.length) showResult();
+  else showQuestion();
+}
+
+function skipQuestion() {
+  currentQuiz.answers[currentQuiz.idx] = -1;
+  currentQuiz.idx++;
+  if(currentQuiz.idx >= currentQuiz.questions.length) showResult();
+  else showQuestion();
+}
+
+function showResult() {
+  clearInterval(currentQuiz.timer);
+  document.getElementById('quizSection').style.display = 'none';
+  document.getElementById('resultSection').style.display = 'block';
+  
+  let correct=0, wrong=0, skipped=0;
+  currentQuiz.questions.forEach((q, i) => {
+    const a = currentQuiz.answers[i];
+    if(a === undefined || a === -1) skipped++;
+    else if(a === q.ans) correct++;
+    else wrong++;
+  });
+  
+  const total = currentQuiz.questions.length;
+  const score = Math.round((correct/total)*100);
+  const color = score >= 70 ? 'var(--ch)' : score >= 40 ? 'var(--mock)' : '#ef4444';
+  
+  document.getElementById('resultScore').textContent = score + '%';
+  document.getElementById('resultScore').style.color = color;
+  document.getElementById('resCorrect').textContent = correct;
+  document.getElementById('resWrong').textContent = wrong;
+  document.getElementById('resSkipped').textContent = skipped;
+  
+  // Save to history
+  state.testHistory.unshift({
+    date: new Date().toLocaleDateString('en-IN'),
+    type: currentQuiz.type,
+    score, correct, wrong, skipped, total,
+    time: currentQuiz.elapsed
+  });
+  saveState();
+  renderTestHistory();
+}
+
+function renderTestHistory() {
+  const el = document.getElementById('testHistory');
+  if(!state.testHistory.length) {
+    el.innerHTML = '<div class="empty-state"><div class="empty-icon">📋</div><div>No tests taken yet. Start your first mock!</div></div>';
+    return;
+  }
+  el.innerHTML = state.testHistory.slice(0,10).map(t => `
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:12px 0;border-bottom:1px solid var(--card-border)">
+      <div>
+        <div style="font-size:13px;font-weight:600">${t.type==='full'?'Full Mock':t.type==='pyq'?'PYQ Test':'Chapter Test'}</div>
+        <div style="font-size:11px;color:var(--text3)">${t.date} · ${Math.floor(t.time/60)}m ${t.time%60}s</div>
+      </div>
+      <div style="display:flex;gap:16px;align-items:center">
+        <span style="font-size:11px;color:var(--ch)">✓ ${t.correct}</span>
+        <span style="font-size:11px;color:#ef4444">✗ ${t.wrong}</span>
+        <span style="font-size:14px;font-weight:700;color:${t.score>=70?'var(--ch)':t.score>=40?'var(--mock)':'#ef4444'}">${t.score}%</span>
+      </div>
+    </div>
+  `).join('');
+}
+
+function exitQuiz() {
+  clearInterval(currentQuiz.timer);
+  document.getElementById('quizSection').style.display = 'none';
+  document.getElementById('resultSection').style.display = 'none';
+  document.getElementById('mockHome').style.display = 'block';
+  renderTestHistory();
+}
+
+// ============================================================
+// ANALYTICS
+// ============================================================
+function renderAnalytics() {
+  const phDone = Object.keys(state.chapterStatus).filter(k=>k.startsWith('Physics_')&&(state.chapterStatus[k]==='done'||state.chapterStatus[k]==='revised')).length;
+  const chDone = Object.keys(state.chapterStatus).filter(k=>k.startsWith('Chemistry_')&&(state.chapterStatus[k]==='done'||state.chapterStatus[k]==='revised')).length;
+  const maDone = Object.keys(state.chapterStatus).filter(k=>k.startsWith('Mathematics_')&&(state.chapterStatus[k]==='done'||state.chapterStatus[k]==='revised')).length;
+  const total = phDone+chDone+maDone;
+  const pct = Math.round(total/91*100);
+  const studyDays = Object.keys(state.daysDone).length;
+  
+  document.getElementById('an-total').textContent = total;
+  document.getElementById('an-pct').textContent = pct+'%';
+  document.getElementById('an-mocks').textContent = state.testHistory.length;
+  document.getElementById('an-days').textContent = studyDays;
+  
+  // Subject bars
+  const sb = document.getElementById('subjectBars');
+  sb.innerHTML = [
+    {name:'Physics', done:phDone, total:30, color:'var(--ph)'},
+    {name:'Chemistry', done:chDone, total:30, color:'var(--ch)'},
+    {name:'Mathematics', done:maDone, total:31, color:'var(--ma)'},
+  ].map(s => {
+    const p = Math.round(s.done/s.total*100);
+    return `
+      <div style="margin-bottom:16px">
+        <div style="display:flex;justify-content:space-between;font-size:13px;margin-bottom:6px">
+          <span style="font-weight:500">${s.name}</span>
+          <span style="color:${s.color};font-weight:600">${s.done}/${s.total} · ${p}%</span>
+        </div>
+        <div class="progress-bar"><div class="progress-fill" style="width:${p}%;background:${s.color}"></div></div>
+      </div>
+    `;
+  }).join('');
+  
+  // Status breakdown
+  const allKeys = Object.values(state.chapterStatus);
+  const statusCounts = {none: 91-allKeys.length, reading: 0, done: 0, revised: 0};
+  allKeys.forEach(v => { if(statusCounts[v]!==undefined) statusCounts[v]++; });
+  // Adjust none
+  statusCounts.none = 91 - (statusCounts.reading + statusCounts.done + statusCounts.revised);
+  
+  const sbd = document.getElementById('statusBreakdown');
+  sbd.innerHTML = [
+    {label:'Not Started', count:statusCounts.none, color:'var(--text3)'},
+    {label:'In Progress', count:statusCounts.reading, color:'var(--ph)'},
+    {label:'Completed', count:statusCounts.done, color:'var(--ch)'},
+    {label:'Revised', count:statusCounts.revised, color:'var(--gold)'},
+  ].map(s => `
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid var(--card-border)">
+      <div style="display:flex;align-items:center;gap:8px">
+        <div style="width:10px;height:10px;border-radius:50%;background:${s.color}"></div>
+        <span style="font-size:13px">${s.label}</span>
+      </div>
+      <span style="font-weight:700;color:${s.color}">${s.count}</span>
+    </div>
+  `).join('');
+  
+  // Upcoming
+  const today = new Date(); today.setHours(0,0,0,0);
+  const upcoming = timetable.filter(d => d.date >= today).slice(0,7);
+  const uw = document.getElementById('upcomingWeek');
+  uw.innerHTML = upcoming.map(d => {
+    const color = d.subject==='Physics'?'ph':d.subject==='Chemistry'?'ch':d.subject==='Mathematics'?'ma':'mock';
+    return `
+      <div style="display:flex;align-items:center;gap:12px;padding:10px 0;border-bottom:1px solid var(--card-border)">
+        <div style="min-width:60px;font-size:12px;color:var(--text3)">${d.dayName} ${d.date.getDate()}</div>
+        <span class="badge badge-${color}">${d.subject}</span>
+        <div style="font-size:13px;flex:1">${d.chapter}</div>
+        <span class="tag tag-${d.type}">${d.type}</span>
+      </div>
+    `;
+  }).join('');
+}
+
+// ============================================================
+// SETTINGS
+// ============================================================
+function saveSettings() {
+  state.examDate = document.getElementById('examDate').value;
+  state.studyHours = document.getElementById('studyHours').value;
+  saveState();
+  renderDashboard();
+}
+
+function resetAll() {
+  if(confirm('Are you sure? All progress, test history, and streaks will be deleted.')) {
+    state.chapterStatus = {};
+    state.daysDone = {};
+    state.testHistory = [];
+    saveState();
+    renderDashboard();
+    renderTracker();
+    renderAnalytics();
+    renderTestHistory();
+    alert('Progress reset!');
+  }
+}
+
+// START
+init();
+</script>
+</body>
+</html>
